@@ -5,13 +5,13 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 	"syscall/js"
 	"time"
 )
 
 var (
-	count = 0
+	count           = 0
+	recordingButton js.Value
 )
 
 // to compile:
@@ -21,15 +21,22 @@ var (
 func main() {
 	log.Printf("hello world!")
 
+	recordingButton = js.Global().Get("document").Call("getElementById", "recordingButton")
+
+	recordingButton.Set("onclick", js.NewCallback(func(args []js.Value) {
+		s := recordingButton.Get("innerHTML").String()
+		log.Printf("toggle got: %s", s)
+
+		if s == "Record" {
+			startRecording()
+		} else {
+			stopRecording()
+		}
+	}))
+
 	tickChan := time.NewTicker(time.Millisecond * 1000).C
 
-	outfile, err := os.Create("/Users/armhold/audio.wav")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer outfile.Close()
-
-	_, err = NewAudioContext(processAudio)
+	_, err := NewAudioContext(processAudio)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -48,6 +55,14 @@ func main() {
 			el.Set("innerHTML", s)
 		}
 	}
+}
+
+func startRecording() {
+	recordingButton.Set("innerHTML", "Stop")
+}
+
+func stopRecording() {
+	recordingButton.Set("innerHTML", "Record")
 }
 
 func processAudio(audioData []int) {
