@@ -1,10 +1,12 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/go-audio/audio v0.0.0-20180206231410-b697a35b5608 h1:PHEBf8t8q21RNXEBzgg15sqaX06CdG1kngmhX+NvQAI=
+github.com/go-audio/audio v0.0.0-20180206231410-b697a35b5608/go.mod h1:6uAu0+H2lHkwdGsAY+j2wHPNPpPoeg5AaEFh9FlA+Zs=
+github.com/go-audio/wav v0.0.0-20180801233548-87c13ac40f03 h1:AnD065XLTOw7K58fn3FNhAUyH9D7g/WbeYrtvHC21bs=
+github.com/go-audio/wav v0.0.0-20180801233548-87c13ac40f03/go.mod h1:7Yks5lSvciOdNmfv+bndELyGXQSTxT3yVA3dsbk/sCE=
+github.com/mattetti/audio v0.0.0-20180403010354-b7bc1ebaf222 h1:v642Tb1fFHk0q+dhHHyXssg+iT1leeGzA6FIsYTugr0=
+github.com/mattetti/audio v0.0.0-20180403010354-b7bc1ebaf222/go.mod h1:LlQmBGkOuV/SKzEDXBPKauvN2UqCgzXO2XjecTGj40s=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1w=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/youpy/go-riff v0.0.0-20131220112943-557d78c11efb h1:RDh7U5Di6o7fblIBe7rVi9KnrcOXUbLwvvLLdP2InSI=
-github.com/youpy/go-riff v0.0.0-20131220112943-557d78c11efb/go.mod h1:83nxdDV4Z9RzrTut9losK7ve4hUnxUR8ASSz4BsKXwQ=
-github.com/youpy/go-wav v0.0.0-20160223082350-b63a9887d320 h1:YuM+QcBOD3fVTF1p5upTKvfAn+CaI1Tsh2s0dxdEzhI=
-github.com/youpy/go-wav v0.0.0-20160223082350-b63a9887d320/go.mod h1:Zf+Ju+8Ofy5zx/YWWArfcGnl5FAsWumLq/uHeRGgL60=

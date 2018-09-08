@@ -5,8 +5,13 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"syscall/js"
 	"time"
+)
+
+var (
+	count = 0
 )
 
 // to compile:
@@ -18,7 +23,13 @@ func main() {
 
 	tickChan := time.NewTicker(time.Millisecond * 1000).C
 
-	_, err := NewAudioContext(processAudio)
+	outfile, err := os.Create("/Users/armhold/audio.wav")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer outfile.Close()
+
+	_, err = NewAudioContext(processAudio)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,5 +47,24 @@ func main() {
 			el := js.Global().Get("document").Call("getElementById", "foo")
 			el.Set("innerHTML", s)
 		}
+	}
+}
+
+func processAudio(audioData []int) {
+	log.Printf("processAudio()...")
+
+	count++
+
+	if count%100 == 0 {
+		// just print out a few bytes
+		maxToPrint := 128
+		line := ""
+		sep := ""
+		for i := 0; i < maxToPrint; i++ {
+			v := audioData[i]
+			line = fmt.Sprintf("%s%s%d", line, sep, v)
+			sep = ", "
+		}
+		log.Print(line)
 	}
 }
